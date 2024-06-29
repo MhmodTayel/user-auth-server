@@ -13,7 +13,7 @@ services:
     environment:
       DATABASE_URL: 'mongodb://db_user:password@mongodb:27017/user-auth'
       NODE_ENV: development
-      JWT_SECRET: "JWT_TOKEN_SECRET"
+      JWT_SECRET: 'JWT_TOKEN_SECRET'
 
   mongodb:
     image: bitnami/mongodb:6.0
@@ -25,6 +25,8 @@ services:
       MONGODB_USERNAME: db_user
       MONGODB_PASSWORD: password
       MONGODB_DATABASE: user-auth
+    ports:
+      - 27018:27017
     healthcheck:
       test: ['CMD', 'mongosh', '--eval', "db.adminCommand('ping')"]
       interval: 20s
