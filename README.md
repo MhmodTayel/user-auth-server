@@ -81,15 +81,22 @@ A robust and efficient web application designed for user authentication, leverag
 ## 🛠️ Local Development
 
 1. Clone the repository.
-2. Ensure `Docker` and `Docker compose` are installed on your machine.
-3. run `docker-compose -f docker-compose.dev.yml up --build
-`
-
+2. Ensure `Docker` , `Docker compose` and `npm` or `yarn` are installed on your machine.
+3. install the NestJS cli via 
+      ```bash
+   npm install -g @nestjs/cli
+4. run this command in the root directory.
+      ```bash
+   npm install
+   ```
+6. run
+    ```bash 
+    docker-compose -f docker-compose.dev.yml up --build
 The application should now be running in development mode and accessible at [http://localhost:5000](http://localhost:5000).
 
-- To stop the application, run `docker-compose down`.
-
-
+- To stop the application, run
+  ```bash 
+  docker-compose down
 ## Authors
 
 - [@MhmodTayel](https://github.com/MhmodTayel)
