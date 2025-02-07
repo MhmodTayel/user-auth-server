@@ -46,7 +46,7 @@ export class AuthService {
 
       const user = await this.userModel.findOne({ email });
       if (!user) {
-        throw new NotFoundException('No account found with this email.');
+        throw new UnauthorizedException('Invalid email or password.');
       }
       const isPasswordValid = await user.validatePassword(dto.password);
       if (!isPasswordValid) {
