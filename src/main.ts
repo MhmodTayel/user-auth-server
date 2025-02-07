@@ -4,9 +4,13 @@ import { ValidationPipe } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Config } from './config/config';
 import helmet from 'helmet';
+import { WinstonModule } from 'nest-winston';
+import { winstonLoggerInstance } from './config/logger.config';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, {
+    logger: WinstonModule.createLogger({ instance: winstonLoggerInstance })
+  });
 
   app.use(helmet());
   app.enableCors(); // for development only

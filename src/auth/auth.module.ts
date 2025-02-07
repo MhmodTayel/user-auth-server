@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Logger, Module } from '@nestjs/common';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -25,6 +25,6 @@ import { Config } from 'src/config/config';
   ]
   ,
   controllers: [AuthController],
-  providers: [AuthService]
+  providers: [AuthService, Logger]
 })
 export class AuthModule { }

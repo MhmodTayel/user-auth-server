@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, Logger } from '@nestjs/common';
 import { UsersModule } from './users/users.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
@@ -42,6 +42,6 @@ import { APP_GUARD } from '@nestjs/core';
   providers: [{
     provide: APP_GUARD,
     useClass: ThrottlerGuard,
-  }],
+  }, Logger],
 })
 export class AppModule { }
