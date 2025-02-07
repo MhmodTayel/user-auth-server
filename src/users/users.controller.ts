@@ -7,11 +7,6 @@ import { User } from './entities/user.entity';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @Post()
-  async create(@Body() createUserDto: CreateUserDto): Promise<User> {
-    return this.usersService.create(createUserDto);
-  }
-
   @Get(':id')
   async findOne(@Param('id') id: string): Promise<User> {
     return this.usersService.findOneById(id);
