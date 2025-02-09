@@ -14,7 +14,7 @@ A robust and efficient web application designed for user authentication, leverag
 
 
 ## 🚀 Deployment Details
-
+- **Web Application**: Deployed on an AWS EC2 instance, accessible at [server](https://www.mtauth.online/api).
 
 
 ## 📬 Endpoints
