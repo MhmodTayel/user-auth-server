@@ -1,0 +1,10 @@
+mtauth.online, www.mtauth.online {
+  reverse_proxy frontend:80
+  header {
+    Strict-Transport-Security max-age=31536000;
+  }
+}
+
+mtauth.online/api, www.mtauth.online/api {
+  reverse_proxy backend:3000
+}
