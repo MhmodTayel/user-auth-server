@@ -33,5 +33,6 @@ jobs:
           script: |
             docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}"
             docker pull ${{ secrets.DOCKER_USERNAME }}/backend:latest
-            cd /path/to/docker-compose-directory
+            export DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}
+            cd ~
             docker compose up -d --force-recreate --no-deps backend
